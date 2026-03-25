@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كورساتي - تعلم البرمجة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- شريط التنقل العلوي -->
+<nav>
+    <h1>💻 كورساتي</h1>
+    <div id="nav-actions">
+        <button id="theme-btn">🌙</button>
+        <a href="#login" class="btn" id="nav-login-btn">تسجيل الدخول</a>
+        <a href="#register" class="btn" id="nav-register-btn">حساب جديد</a>
+        <span id="user-greeting" style="display: none; font-weight: bold; margin: 0 10px;"></span>
+        <button id="logout-btn" class="btn" style="display: none;">تسجيل خروج</button>
+    </div>
+</nav>
+
+<!-- قسم الترحيب -->
+<header class="hero">
+    <h2>تعلّم البرمجة من الصفر 🚀</h2>
+    <p>كورسات مجانية وبسيطة تأخذك من مبتدئ إلى محترف</p>
+    
+    <div style="background: rgba(255, 255, 255, 0.2); padding: 15px; border-radius: 10px; display: inline-block; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 5px;">أنت الزائر رقم: <span id="visitor-count">1</span> 👁️</h3>
+        <p style="margin: 0; color: #ffeb3b; font-weight: bold;">🎉 مبروك! لقد حصلت على كود خصم 100% (FREE2026) 🎉</p>
+    </div>
+    <br>
+    
+    <a href="#courses" class="btn">تصفّح الكورسات</a>
+</header>
+
+<!-- قسم عرض الكورسات -->
+<section id="courses">
+    <h2>📚 الكورسات المتاحة</h2>
+    <div class="cards">
+
+        <!-- كورس HTML و CSS -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80" alt="HTML CSS" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+            <span class="icon">🌐</span>
+            <h3>HTML & CSS</h3>
+            <p>تعلّم بناء وتنسيق صفحات الويب من الصفر</p>
+            <small>⭐ مبتدئ</small>
+            <div style="margin: 10px 0; font-size: 1.1rem;">السعر: <del style="color: #e74c3c;">$50</del> <span style="color: #27ae60; font-weight: bold;">مجانًا بالكود!</span></div>
+            <a href="course-html.html" class="btn" style="margin-top: 10px; display: inline-block;">تفاصيل الكورس</a>
+        </div>
+
+        <!-- كورس JavaScript -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=800&q=80" alt="JavaScript" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+            <span class="icon">⚡</span>
+            <h3>JavaScript</h3>
+            <p>أضف التفاعل والحركة لمواقعك بسهولة</p>
+            <small>⭐⭐ متوسط</small>
+            <div style="margin: 10px 0; font-size: 1.1rem;">السعر: <del style="color: #e74c3c;">$75</del> <span style="color: #27ae60; font-weight: bold;">مجانًا بالكود!</span></div>
+            <a href="course-js.html" class="btn" style="margin-top: 10px; display: inline-block;">تفاصيل الكورس</a>
+        </div>
+
+        <!-- كورس PHP و MySQL -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?auto=format&fit=crop&w=800&q=80" alt="PHP & MySQL" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
+            <span class="icon">🐘</span>
+            <h3>PHP & MySQL</h3>
+            <p>ابنِ مواقع ديناميكية متصلة بقواعد بيانات</p>
+            <small>⭐⭐⭐ متقدم</small>
+            <div style="margin: 10px 0; font-size: 1.1rem;">السعر: <del style="color: #e74c3c;">$100</del> <span style="color: #27ae60; font-weight: bold;">مجانًا بالكود!</span></div>
+            <a href="course-php.html" class="btn" style="margin-top: 10px; display: inline-block;">تفاصيل الكورس</a>
+        </div>
+    </div>
+</section>
+
+<!-- قسم كورساتي (يظهر للمستخدم المسجل فقط) -->
+<section id="my-courses-section" style="display: none; padding: 20px; text-align: center;">
+    <h2>🎓 كورساتي المسجلة</h2>
+    <ul id="my-courses-list" style="list-style: none; padding: 0;"></ul>
+</section>
+
+<!-- نموذج تسجيل الدخول -->
+<section id="login">
+    <h2>🔑 تسجيل الدخول</h2>
+    <form id="login-form">
+        <label>البريد الإلكتروني</label>
+        <input type="email" id="login-email" placeholder="example@mail.com" required>
+
+        <label>كلمة المرور</label>
+        <input type="password" id="login-password" placeholder="كلمة المرور" required>
+
+        <button type="submit" class="btn">دخول 🚪</button>
+        <p id="login-msg"></p>
+    </form>
+</section>
+
+<!-- نموذج تسجيل حساب جديد -->
+<section id="register">
+    <h2>📝 إنشاء حساب جديد</h2>
+    <!-- الفورم يشتغل بالجافاسكريبت محلياً بدون سيرفر -->
+    <form id="register-form">
+        <label>الاسم الكامل</label>
+        <input type="text" id="reg-name" placeholder="أدخل اسمك" required>
+
+        <label>البريد الإلكتروني</label>
+        <input type="email" id="reg-email" placeholder="example@mail.com" required>
+
+        <label>كلمة المرور</label>
+        <input type="password" id="reg-password" placeholder="كلمة مرور قوية" required>
+
+        <button type="submit" class="btn">إنشاء الحساب ✅</button>
+        <!-- رسالة تظهر بعد التسجيل -->
+        <p id="msg"></p>
+    </form>
+</section>
+
+
+<!-- الفوتر -->
+<footer>💻 كورساتي © 2026 - جميع الحقوق محفوظة</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
